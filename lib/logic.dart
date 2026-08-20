@@ -22,7 +22,24 @@ String revealWord(String word, Set<String> guessedLetters) {
   }
   return output;
 }
+int wrongGuessCount(String word, Set<String> guessedLetters) {
+  // Count of letters that do not appear in word
+  // Loop over word, comparing each element to guessedLetter
+  // The accumulator in this case is a counter
+  // Return a number: the result of count
+  var count = 0;
+  for (var w in word.split('')) {
+    if (guessedLetters.contains(w)) {
+      //Do nothing
+    } else {
+      count = count + 1;
+    }
+  }
+  return count;
+}
 
 void main() {
   print(revealWord("CAT", {'C', 'T'}));
+  print(wrongGuessCount("CAT", {'C', 'T'}));
 }
+
