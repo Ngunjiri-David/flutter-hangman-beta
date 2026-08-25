@@ -38,7 +38,7 @@ void main() {
   print(
     pickWord({
       //'Easy': ['Map', 'Ant', 'Sauce'],
-      'Easy': ['CAT', 'DOG', 'SUN']
+      'Easy': ['CAT', 'DOG', 'SUN'],
     }, 'Easy'),
   );
 }
@@ -48,12 +48,24 @@ String? pickWord(
   String difficulty,
 ) {
   var foundDiff;
-  String word = '';
+  // String will only help with returning a similar type.
+  //String word = '';
+  List word = [];
   if (wordByDifficulty.containsKey(difficulty)) {
     foundDiff = wordByDifficulty[difficulty];
   } else {
     return null;
   }
+  // The below for loop returns a concatenated string with no separators
+  // The need is to get the first element.
+  /* 
   for (var w in foundDiff) word = word + w;
   return word;
+  */
+
+  // Get the first element by indexing the list.
+  // The for loop is dead code.
+  // for (var w in foundDiff) word.add(w);
+  String oneWord = foundDiff[0];
+  return oneWord;
 }
