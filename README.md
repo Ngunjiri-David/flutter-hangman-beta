@@ -1,2 +1,2 @@
 # flutter-hangman-beta
-Hangman in flutter, testing.
+Hangman in flutter/Dart, testing.
